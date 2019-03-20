@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'shashankbarsin/bootcamp-demo:$(build.buildId)'
+  imageName: 'ranglanimanish90/bootcamp-demo:$(build.buildId)'
 
 steps:
 - script: docker build -t developer-camp:dev ./app
@@ -20,3 +20,5 @@ steps:
     command: login
     azureSubscriptionEndpoint: demo123
     azureContainerRegistry: dw123.azurecr.io
+- script: dock build -t dw123.azurecr.io/$(imageName) ./app
+- script: push dw123.azurecr.io/$(imageName)
