@@ -21,4 +21,4 @@ steps:
     azureSubscriptionEndpoint: demo123
     azureContainerRegistry: dw123.azurecr.io
 - script: docker build -t dw123.azurecr.io/$(imageName) ./app
-- script: push dw123.azurecr.io/$(imageName)
+- script: docker push dw123.azurecr.io/$(imageName)
